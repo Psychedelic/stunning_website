@@ -25,6 +25,10 @@ $(function(){
 
   // Init scrollReveal.min.js
   window.scrollReveal = new scrollReveal();
+
+  $('.profile, .text').addClass('animated fadeInUp');
+  $('.scroll-btn').addClass('animated fadeIn');
+
 })
 
 /* parallax */

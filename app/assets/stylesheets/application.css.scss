@@ -21,6 +21,7 @@
   @import "theme/base.css.scss";
   @import "theme/layout.css.scss";
   @import "theme/forms.css.scss";
+  @import "theme/animate.css.scss";
 
 #header-page, 
 #footer-page {
@@ -68,11 +69,18 @@
   }
 }
 
+.text, .profile {
+  animation-delay: 1000ms;
+  -webkit-animation-delay: 1000ms;
+}
+
 .scroll-btn {
   position: absolute;
   bottom: 20px;
   left: 50%;
   margin-left: -23px;
+  animation-delay: 2400ms;
+  -webkit-animation-delay: 2400ms;
 }
 
 .profile {
