@@ -1,5 +1,26 @@
 #header-page 
-  = link_to "I'm Stunning", root_path, class: "brand-name"
-  .navicon 
-    %a{id: "nav-toggle", class: "nav_slide_button"}
-      %span
+  #menu
+    = link_to "I'm Stunning", root_path, class: "brand-name"
+    .navicon 
+      %a{id: "nav-toggle", class: "nav_slide_button"}
+        %span
+
+  %section#hero-unit.table
+    .table-cell
+      - distance = "80px"
+      .container
+        
+        .text-center{data: {0 => "opacity: 1; -webkit-transform: translateY(0px); -moz-transform: translateY(0px); transform: translateY(0px);", 500 => "opacity: 0; -webkit-transform: translateY(#{distance}); -moz-transform: translateY(#{distance}); transform: translateY(#{distance});"}}
+
+          .profile
+            = image_tag('profile.jpg')
+          
+          .text
+            %h1.is-black.is-uppercase Teddy Lecaillon.
+            %h2.is-light 
+              I'm a stunning user interfaces designer & front-end developer.
+
+        %span.scroll-btn
+          = link_to "#work", class: "anchorLink" do
+            %span.mouse{data: {0 => "opacity: 1; -webkit-transform: translateY(0px); -moz-transform: translateY(0px); transform: translateY(0px);", 300 => "opacity: 0; -webkit-transform: translateY(#{distance}); -moz-transform: translateY(#{distance}); transform: translateY(#{distance});"}}
+              %span

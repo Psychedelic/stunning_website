@@ -16,7 +16,27 @@
 //= require bootstrap
 //= require parallaxScroller.min
 //= require skroller.min
+//= require scrollReveal.min
 //= require_tree .
+
+$(function(){
+  // Init Skrollr
+  var s = skrollr.init();
+
+  // Init scrollReveal.min.js
+  window.scrollReveal = new scrollReveal();
+})
+
+/* parallax */
+
+var top_header = '';
+$(document).ready(function(){
+  top_header = $('#header-page');
+});
+$(window).scroll(function () {
+  var st = $(window).scrollTop();
+  top_header.css({'background-position':"center "+(st*.5)+"px"});
+});
 
 /*
  ** Slide-In Nav **

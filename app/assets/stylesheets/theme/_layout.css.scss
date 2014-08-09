@@ -1,67 +1,4 @@
-#nav-toggle { 
-  position: absolute; 
-  right: 40px; 
-  top: 20px; 
-}
-
-#nav-toggle { 
-  cursor: pointer; 
-  padding: 10px 35px 16px 0px; 
-}
-
-#nav-toggle span, 
-#nav-toggle span:before, 
-#nav-toggle span:after { 
-  cursor: pointer; 
-  @include border-radius(1px); 
-  height: 2px; 
-  width: 25px; 
-  background: #fff; 
-  position: absolute; 
-  display: block; 
-  content: ''; 
-}
-
-#nav-toggle span:before { 
-  top: -7px; 
-}
-
-#nav-toggle span:after { 
-  bottom: -7px; 
-}
-
-#nav-toggle span, 
-#nav-toggle span:before, 
-#nav-toggle span:after { 
-  transition: all 250ms ease-in-out; 
-  -webkit-transition: all 250ms ease-in-out; 
-  -moz-transition: all 250ms ease-in-out; 
-  -o-transition: all 250ms ease-in-out; 
-}
-
-#nav-toggle.active span { 
-  background-color: transparent; 
-}
-
-#nav-toggle.active span:before, 
-#nav-toggle.active span:after { 
-  top: 0; 
-}
-
-#nav-toggle.active span:before { 
-  transform: rotate(45deg); 
-  -webkit-transform: rotate(45deg); 
-  -ms-transform: rotate(45deg); 
-}
-
-#nav-toggle.active span:after { 
-  transform: translateY(-7px) rotate(-45deg); 
-  -webkit-transform: translateY(-7px) rotate(-45deg); 
-  -ms-transform: translateY(-7px) rotate(-45deg); 
-  top: 7px; 
-}
-
-#header-page {
+#menu {
   position: fixed;
   top: 0;
   left: 0;
@@ -75,6 +12,39 @@
     &:hover {
       text-decoration: none;
     }
+  }
+}
+
+#footer-page {
+  #social-links {
+    position: relative;
+    z-index: 50;
+  }
+  h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  ul {
+    li {
+      display: inline-block;
+      margin-right: 40px;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+  a {
+    &:hover {
+      text-decoration: none;
+      i {color: $primary-color;}
+    }
+  }
+  i {
+    -webkit-transition: all 250ms ease;
+    transition: all 250ms ease;
+    font-size: 30px;
+    color: #fff;
+
   }
 }
 
