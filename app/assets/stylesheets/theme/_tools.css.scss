@@ -1,0 +1,260 @@
+/* _tools.scss - Use this file to define all the mixins and elements of the application.
+ *
+ * Please verify that this file is correctly import into screen.scss,
+ * the initializer file... (or equivalent):
+ * @import "_tools.scss"; */
+
+/*
+ * TYPOGRAPHY (@font-face)
+ * declare any typeface you need here.
+/*
+*/
+  @font-face {
+    font-family: 'Proxima Nova';
+    src: font-url('ProximaNova-Extrabold.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Proxima Nova';
+    src: font-url('ProximaNova-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Proxima Nova';
+    src: font-url('ProximaNova-BoldIt.otf') format('opentype');
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: 'Proxima Nova';
+    src: font-url('ProximaNova-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Proxima Nova';
+    src: font-url('ProximaNova-RegularItalic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: 'Proxima Nova';
+    src: font-url('ProximaNova-LightItalic.otf') format('opentype');
+    font-weight: 100;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: 'Proxima Nova';
+    src: font-url('ProximaNova-Light.otf') format('opentype');
+    font-weight: 100;
+    font-style: normal;
+  }
+
+/*
+ * VARIABLES
+ * start to define all of your SASS variables here.
+/*
+*/
+  $primary-color: #3498DB;
+  $secondary-color: #E74C3C; 
+
+  $link-color: $primary-color; 
+  $danger-color: #DF4141; // ROUGE
+
+  $typo: "Proxima Nova", "Helvetica", Arial, sans-serif;
+  $typo-heading: "Proxima Nova", "Helvetica", Arial, sans-serif;
+  $heading-text-color: #FFF;
+  $text-color: #FFF;
+
+/*
+ * MIXINS
+ * If you don't import mixins of compass/css3...
+ * you can put your own mixins here.
+/*
+*/
+  @mixin border-radius($radius) {
+    -webkit-border-radius:  $radius;
+    -moz-border-radius:     $radius;
+    border-radius:          $radius;
+  }
+  @mixin box-shadow($args) {
+    -webkit-box-shadow: $args;
+    box-shadow:         $args;
+  }
+  @mixin box-shadow-multi($arg1, $arg2) {
+    -webkit-box-shadow: $arg1, $arg2;
+    box-shadow:         $arg1, $arg2;
+  }
+  @mixin box-sizing($arg: border-box) {
+    -webkit-box-sizing: $arg;
+    -moz-box-sizing:    $arg;
+    box-sizing:         $arg;
+  }
+  @mixin background-size($arg: cover) {
+    -webkit-background-size:  $arg;
+    -moz-background-size:     $arg;
+    -o-background-size:       $arg;
+    background-size:          $arg;
+  }
+  @mixin gradient($arg1, $arg2) {
+    background-color: $arg2;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $arg1), color-stop(70%, $arg2));
+    background-image: -webkit-linear-gradient($arg1,$arg2 70%);
+    background-image: -moz-linear-gradient($arg1,$arg2 70%);
+    background-image: -o-linear-gradient($arg1,$arg2 70%);
+    background-image: linear-gradient($arg1,$arg2 70%);
+  }
+
+/*
+ * __BTN-APP
+ *
+/*
+*/
+  .btn-app {
+    border: 0;
+    @include border-radius(8px);
+    padding: 10px;
+    background: #ddd;
+    color: #fff;
+    outline: none;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    -webkit-transition: background 350ms ease;
+    transition: background 350ms ease;
+    vertical-align: middle;
+    &:hover {
+      -webkit-transition: background 350ms ease;
+      transition: background 350ms ease;
+    }
+  }
+
+  @mixin btn-construct($color-text, $color-background, $color-background-hover) {
+    background: $color-background;
+    color: $color-text;
+    &:hover {
+      background: $color-background-hover;
+      color: $color-text;
+      text-decoration: none;
+    }
+    &:focus, 
+    &:active,
+    &.active {
+      background: $color-background;
+    }
+  }
+
+  .btn-main {
+    @include btn-construct(#fff, $primary-color, darken($primary-color, 5%));
+  }
+
+  .btn-second {
+    @include btn-construct(#000, $secondary-color, darken($secondary-color, 5%));
+  }
+
+  .btn-default {
+    @include btn-construct(#555, #fff, #efefef);
+    border: 1px solid #ddd;
+    &:hover,
+    &.active {
+      border: 1px solid #ddd;
+    }
+    &.active {
+      background: #efefef;
+    }
+  }
+
+  .btn-danger {
+    @include btn-construct(#fff, $danger-color, darken($danger-color, 10%));
+  }
+
+  .btn-facebook {
+    @include btn-construct(#fff, #3b5998, lighten(#3b5998, 10%));
+    padding-left: 5px;
+    i {
+      font-size: 24px;
+    }
+    span {
+      vertical-align: middle;
+    }
+  }
+
+  .is-block {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .is-large {
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .is-small {
+    padding: 4px 8px;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: normal;
+  }
+
+/*
+ ** DIVERS **
+ *
+/*
+*/
+  .nowrap {
+    white-space: nowrap;
+  }
+  // Sous-menus en hover
+  .dropdown-menu .sub-menu {
+    left: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    margin-top: -1px;
+  }
+  .dropdown-menu li:hover .sub-menu {
+    display: block;
+  }
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0px !important;
+
+  }
+
+  .sub-menu-hover {
+    background: rgba(0,0,0,.2);
+  }
+
+  .well {
+    background: #f8f8f8;
+    @include border-radius(8px);
+    @include box-shadow(0px 1px 2px rgba(0,0,0,.2));
+    border: 0;
+    padding: 20px;
+  }
+
+  .table {
+    display: table;
+    height: 100%;
+    width: 100%;
+    margin: 0; 
+    .table-cell {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+  
+
+
+
+
