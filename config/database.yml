@@ -3,3 +3,10 @@ development:
   host: localhost
   database: stunning_website
   username: teddylecaillon
+
+production:
+  host: ec2-54-204-37-92.compute-1.amazonaws.com
+  database: d2optd5adkoft8
+  username: ibunnnrvrqypjv
+  port: 5432
+  password: DgmHZEfGFwOIjmCByjsnJo_vT3

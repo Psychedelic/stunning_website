@@ -30,6 +30,8 @@ gem 'haml'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'flutie'
 
+gem 'rails_12factor', group: :production
+
 ## Development tools
 group :development do
   gem 'capistrano', '~> 3.2.0'
