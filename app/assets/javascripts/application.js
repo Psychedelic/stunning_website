@@ -35,11 +35,11 @@ $(function(){
 
 var top_header = '';
 $(document).ready(function(){
-  top_header = $('#header-page');
+  top_header = $('#header-page')
 });
 $(window).scroll(function () {
-  var st = $(window).scrollTop();
-  top_header.css({'background-position':"center "+(st*.5)+"px"});
+  var st = $(window).scrollTop()
+  top_header.css({'background-position':"center "+(st*.5)+"px"})
 });
 
 /*
