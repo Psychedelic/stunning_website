@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap
 //= require parallaxScroller.min
 //= require skroller.min
 //= require scrollReveal.min

@@ -10,18 +10,13 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require bootstrap
  *= require_self
  */
 
-// L'ORDRE D'IMPORTATION EST IMPORTANT ! //
-// ************************************* //
-  @import "theme/entypo.css.scss";
-  @import "theme/tools.css.scss";
-  @import "theme/base.css.scss";
-  @import "theme/layout.css.scss";
-  @import "theme/forms.css.scss";
-  @import "theme/animate.css.scss";
+@import "bourbon";
+@import "base/grid-settings";
+@import "neat";
+@import "base/base";
 
 #header-page, 
 #footer-page {
@@ -38,6 +33,7 @@
   background-position: bottom center;
   height: 40vh;
   position: relative;
+
   &:after {
     content: "";
     position: absolute; 
@@ -49,6 +45,7 @@
     -webkit-transition: background 500ms ease;
     transition: background 500ms ease;
   }
+
   &:hover {
     &:after {
       background: rgba(0,0,0,.8);
@@ -58,12 +55,15 @@
 
 #hero-unit {
   position: relative;
+
   h1 {
-    font-size: 48px;
-  }
-  h2 {
     font-size: 28px;
   }
+
+  h2 {
+    font-size: 48px;
+  }
+
   .text-center {
     margin-bottom: 100px;
   }
@@ -85,8 +85,9 @@
 
 .profile {
   margin-bottom: 30px;
+
   img {
-    @include border-radius(100%);
+    border-radius: 100%;
     padding: 4px;
     background: #fff;
     height: 140px;

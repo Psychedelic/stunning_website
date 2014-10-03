@@ -27,8 +27,8 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'pg'
 gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 gem 'haml'
-gem 'bootstrap-sass', '~> 3.1.1'
 gem 'flutie'
+gem 'neat'
 
 gem 'rails_12factor', group: :production
 
